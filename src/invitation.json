@@ -1,0 +1,74 @@
+{
+  "couple": {
+    "brideName": "Sneha",
+    "groomName": "Arjun",
+    "initials": "S&A",
+    "bridePortrait": "/assets/portraits/bride.webp",
+    "groomPortrait": "/assets/portraits/groom.webp",
+    "brideIntroduction": "A kind heart, a beautiful soul.",
+    "groomIntroduction": "A supportive hand, a lifelong partner."
+  },
+  "event": {
+    "title": "Engagement Ceremony",
+    "occasion": "engagement",
+    "date": "2027-01-24T18:00:00+05:30",
+    "end": "2027-01-24T22:00:00+05:30",
+    "timezone": "Asia/Kolkata",
+    "city": "Hyderabad",
+    "venueName": "The Grand Celebration Hall",
+    "venueAddress": "123 Celebration Lane, Hyderabad, Telangana",
+    "mapUrl": "",
+    "dressCode": ""
+  },
+  "events": [],
+  "story": [
+    {
+      "title": "First Meeting",
+      "text": "It all began with a simple hello…",
+      "image": 2
+    },
+    {
+      "title": "A Memorable Moment",
+      "text": "Together, we discovered a beautiful journey…",
+      "image": 0
+    },
+    {
+      "title": "The Engagement",
+      "text": "And now, a new chapter begins…",
+      "image": 1
+    },
+    {
+      "title": "The Beginning of Forever",
+      "text": "A lifetime of moments still to come.",
+      "image": 3
+    }
+  ],
+  "gallery": [
+    {
+      "src": "/assets/gallery/garden.webp",
+      "alt": "An evening walk through the palace garden"
+    },
+    {
+      "src": "/assets/gallery/rings.webp",
+      "alt": "Hands clasped around an engagement ring"
+    },
+    {
+      "src": "/assets/gallery/arch.webp",
+      "alt": "A quiet moment beneath flowering branches"
+    },
+    {
+      "src": "/assets/gallery/sunset.webp",
+      "alt": "Together at sunset"
+    }
+  ],
+  "rsvp": {
+    "enabled": true,
+    "endpoint": "/api/rsvp"
+  },
+  "music": {
+    "enabled": true,
+    "source": "/assets/audio/serenade.wav"
+  },
+  "siteUrl": "",
+  "socialImage": "/assets/social/engagement.jpg"
+}
