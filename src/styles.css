@@ -8,6 +8,7 @@
 }
 
 :root{
+  -webkit-tap-highlight-color: transparent;
   --emerald:#173d2c;--deep:#10291f;--wine:#4b111c;--burgundy:#741f2b;--gold:#c5a15a;--champagne:#e2c98c;--ivory:#f8f2e8;--cream:#efe5d4;--ink:#30251f;
   --script:"Great Vibes","Edwardian Script ITC","Monotype Corsiva",cursive;--serif:"Cormorant Garamond",Garamond,Georgia,serif;--sans:Inter,"Segoe UI",Arial,sans-serif;
   --grain:url('/assets/textures/grain.png');--foil:linear-gradient(125deg,#a87c43,#e7c998 26%,#bc955f 52%,#f2dba7 73%,#a57c49);
