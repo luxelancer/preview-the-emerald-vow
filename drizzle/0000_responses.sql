@@ -1,0 +1,9 @@
+CREATE TABLE responses (
+  id TEXT PRIMARY KEY,
+  name TEXT NOT NULL,
+  phone TEXT,
+  attending INTEGER NOT NULL,
+  guests INTEGER NOT NULL,
+  message TEXT,
+  created TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
