@@ -54,15 +54,18 @@ async function copy(text:string){
 function Closing({replay}:{replay:()=>void}){
   const [feedback,setFeedback]=useState('')
   const url=invitation.siteUrl||location.origin+location.pathname
-  async function share(linkOnly:boolean){
+  async function share(){
     const text=names+' invite you to celebrate their '+invitation.event.occasion+' on '+displayDate()+'.'
     try{
-      if(!linkOnly&&navigator.share){await navigator.share({title:names+' | Invitation',text,url});setFeedback('Invitation shared.')}
-      else {await copy(linkOnly?url:text+' '+url);setFeedback(linkOnly?'Invitation link copied.':'Invitation copied and ready to share.')}
+      if(navigator.share){await navigator.share({title:names+' | Invitation',text,url});setFeedback('Invitation shared.')}
+      else {await copy(text+' '+url);setFeedback('Invitation copied and ready to share.')}
     }catch(e){if(!(e instanceof DOMException&&e.name==='AbortError'))setFeedback('Sharing is unavailable. You can copy this link: '+url)}
   }
   return <footer id="closing" className="closing panel"><Bouquet className="corner-tl"/><Bouquet className="corner-br"/><p>Your presence will make our celebration even more special.</p><h2>{names}</h2><p>With love, we look forward to celebrating with you.</p><Divider/>
-    <div className="closing-actions"><button onClick={()=>share(false)}><Icon name="share"/>Share invitation</button><button onClick={()=>share(true)}><Icon name="copy"/>Copy link</button><button onClick={replay}><Icon name="replay"/>Replay invitation</button></div><p className="feedback" role="status">{feedback}</p><Brand/></footer>
+    <div className="closing-actions">
+      <button onClick={share}><Icon name="share"/>Share invitation</button>
+      <button onClick={replay}><Icon name="replay"/>Replay invitation</button>
+    </div><p className="feedback" role="status">{feedback}</p><Brand/></footer>
 }
 
 export function InvitationContent({replay}:{replay:()=>void}){

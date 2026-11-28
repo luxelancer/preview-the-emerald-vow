@@ -26,7 +26,6 @@ function Music(){
 }
 function App(){
   const [opened,setOpened]=useState(hasOpened),[opening,setOpening]=useState(false)
-  const [menu,setMenu]=useState(false)
   const timer=useRef<number|undefined>(undefined),focusNext=useRef(false)
   useEffect(()=>()=>clearTimeout(timer.current),[])
   useEffect(()=>{
@@ -46,13 +45,11 @@ function App(){
   }
   function replay(){
     try{localStorage.removeItem(storageKey)}catch{}
-    focusNext.current=true;setMenu(false);setOpened(false)
+    focusNext.current=true;setOpened(false)
     history.replaceState(null,'',location.pathname+location.search)
   }
-  const links=[['couple','Our Couple'],['story','Our Story'],['celebration','Celebration'],['gallery','Gallery'],...(invitation.rsvp.enabled?[['rsvp','RSVP']]:[])]
   return <div className={opened?'opened-site':'sealed-site'}>
     <header className="masthead">{opened && <Brand/>}
-      {opened&&<><button className="menu-toggle" aria-expanded={menu} aria-controls="nav" onClick={()=>setMenu(!menu)}>{menu?'Close':'Menu'}</button><nav id="nav" className={menu?'show':''} aria-label="Invitation sections">{links.map(([id,label])=><a key={id} href={'#'+id} onClick={()=>setMenu(false)}>{label}</a>)}</nav></>}
       <div className="header-controls"><Music/>{!opened&&<button className="skip" onClick={enter}>Skip intro <Icon name="right" size={15}/></button>}</div>
     </header>
     {opened?<InvitationContent replay={replay}/>:<Cover opening={opening} open={open}/>}
