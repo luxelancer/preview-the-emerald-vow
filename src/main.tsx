@@ -5,6 +5,7 @@ import { Cover } from './components/Envelope'
 import { Brand, Icon } from './components/Ornaments'
 import { InvitationContent } from './components/Invitation'
 import './styles.css'
+import './envelope.css'
 import './sections.css'
 
 const storageKey='luxelancer.opened.'+invitationId
@@ -50,7 +51,7 @@ function App(){
   }
   const links=[['couple','Our Couple'],['story','Our Story'],['celebration','Celebration'],['gallery','Gallery'],...(invitation.rsvp.enabled?[['rsvp','RSVP']]:[])]
   return <div className={opened?'opened-site':'sealed-site'}>
-    <header className="masthead"><span id="cover-start" tabIndex={-1}><Brand/></span>
+    <header className="masthead">{opened && <Brand/>}
       {opened&&<><button className="menu-toggle" aria-expanded={menu} aria-controls="nav" onClick={()=>setMenu(!menu)}>{menu?'Close':'Menu'}</button><nav id="nav" className={menu?'show':''} aria-label="Invitation sections">{links.map(([id,label])=><a key={id} href={'#'+id} onClick={()=>setMenu(false)}>{label}</a>)}</nav></>}
       <div className="header-controls"><Music/>{!opened&&<button className="skip" onClick={enter}>Skip intro <Icon name="right" size={15}/></button>}</div>
     </header>
